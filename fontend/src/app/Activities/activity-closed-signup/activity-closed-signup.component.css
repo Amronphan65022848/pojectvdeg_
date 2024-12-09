@@ -1,0 +1,109 @@
+
+.div{
+    padding: 30px;
+}
+.closed {
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.data-c {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #eaf3e8;
+    border: 1px solid #c0daba;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* เพิ่มช่องว่างระหว่างส่วนต่างๆ */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.data-c img {
+    width: 100%;
+    max-width: 900px;
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 15px;
+    margin: 0 auto; /* จัดกึ่งกลาง */
+}
+.head h3 {
+    font-size: 24px; /* ขนาดใหญ่ขึ้นสำหรับหัวข้อ */
+    font-weight: bold; /* ตัวหนา */
+    color: #333; /* เปลี่ยนสีตัวอักษร */
+    margin: 10px 0;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.head h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+.dis span {
+    font-size: 20px;
+   
+    display: block; /* แยกบรรทัด */
+    margin-bottom: 10px;
+}
+.dis p {
+    font-size: 18px; /* ขนาดตัวหนังสือที่อ่านง่าย */
+    line-height: 1.6; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    color: #555; /* สีเทาเข้ม */
+    text-align: start; /* จัดข้อความให้ชิดขอบทั้งสองด้าน */
+}
+
+.dis {
+    word-wrap: break-word;
+    /* font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    text-align: start; */
+}
+
+.b-end {
+    text-align: center;
+}
+
+.b-end h1 {
+    font-size: 24px;
+    color: #d9534f; /* สีแดงแจ้งเตือน */
+}
+
+.btn-end {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #114201 -90%, #2BA803);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}

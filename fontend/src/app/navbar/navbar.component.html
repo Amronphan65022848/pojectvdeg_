@@ -1,0 +1,43 @@
+<nav>
+  <div class="container">
+    <!-- Logo - ซ้าย -->
+    <div class="logo">
+      <img src="../../assets/imgs/navbar/logo.png" alt="Logo">
+    </div>
+
+    <!-- เมนู - ตรงกลาง -->
+    <ul class="menu" [class.open]="menuOpen">
+      <li>
+        <a routerLink="/home" routerLinkActive="active-link" (click)="closeMenu()">Home</a>
+      </li>
+      <li>
+        <a routerLink="/activity" routerLinkActive="active-link" (click)="closeMenu()">Activities</a>
+      </li>
+      <li *ngIf="isAdmin">
+        <a routerLink="/admin-list" routerLinkActive="active-link" (click)="closeMenu()">Admin</a>
+      </li>
+
+
+      <!-- เพิ่มรายการโปรไฟล์ -->
+      <li class="profile-link">
+        <a *ngIf="hasToken" routerLink="/profile" routerLinkActive="active-link" (click)="closeMenu()">Profile</a>
+        <a *ngIf="!hasToken" routerLink="/login-guest" routerLinkActive="active-link" (click)="closeMenu()">Login</a>
+      </li>
+      
+    </ul>
+
+    <!-- ปุ่มโปรไฟล์ - ขวา -->
+    <div class="profile">
+      <a href="#" (click)="navigateToProfile($event)">
+        <img src="../../assets/imgs/profile/proflies.svg" alt="Profile">
+      </a>
+    </div>
+
+    <!-- Hamburger สำหรับมือถือ -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

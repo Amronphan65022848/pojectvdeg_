@@ -1,0 +1,46 @@
+<div class="Login">
+  <div class="div">
+  <div class="conteaner">
+    <div class="data">
+      <h1>LOGIN</h1>
+    </div>
+
+    <form [formGroup]="loginForm" >
+      <!-- <div class="body"> -->
+        <div class="data">
+          <input type="text" formControlName="email" placeholder="Email">
+          <input type="password" formControlName="password" placeholder="Password">
+        </div>
+        <div class="text-p">
+          <p (click)="navigateToRegister()" class="text-register">Register Here</p>
+          <p (click)="navigateToForgot()">Forgot Password?</p>
+        </div>
+      <!-- </div> -->
+      
+    </form>
+
+    <button (click)="onSubmit()" >Login</button>
+    <div class="text-p1">
+      <!-- <p>Or Login Useing</p> -->
+
+      <div class="text-p2">
+        <p><a href="" (click)="continueAsGuest($event)">Continue as Guest</a></p>
+      </div>
+      
+    </div>
+    <!-- <div class="social">
+      <a href="#" class="social-button"
+        ><img src="../../assets/imgs/login/facebook.svg" alt="Facebook"
+      /></a>
+      <a href="#" class="social-button"
+        ><img src="../../assets/imgs/login/google.svg" alt="Google"
+      /></a>
+      <a href="#" class="social-button"
+        ><img src="../../assets/imgs/login/line.svg" alt="LINE"
+      /></a>
+    </div> -->
+   
+    
+  </div>
+</div>
+</div>

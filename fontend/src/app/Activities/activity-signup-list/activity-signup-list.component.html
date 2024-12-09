@@ -1,0 +1,32 @@
+<app-search></app-search>
+
+<div class="dtn">
+  <div *ngIf="loading" class="loading-overlay">
+    <mat-spinner></mat-spinner>
+  </div>
+    <h2 style="text-align:center; font-size: 2rem;" >Volunteer List</h2>
+<table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Tel.</th>
+        <th>Allergies</th>
+        <th>medicalHistory</th>
+        <th>Emergency Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+       <!-- วนลูปเพื่อแสดงข้อมูลอาสาสมัคร -->
+       <!-- <tr *ngFor="let activity of activities"> -->
+      <tr *ngFor="let activity of activities; let i = index">
+        <td>{{ i+1 }}</td> <!-- ใช้ id จาก activity แทนหมายเลขลำดับ -->
+        <td>{{ activity.firstName }} {{ activity.lastName }}</td> <!-- ชื่อและนามสกุล -->
+        <td>{{ activity.phoneNumber }}</td>
+        <td>{{ activity.allergies }}</td>
+        <td>{{ activity.medicalHistory }}</td> <!-- เบอร์โทร -->
+        <td>{{ activity.emergencyContact }}</td> <!-- เบอร์โทรฉุกเฉิน -->
+      </tr>
+    </tbody>
+  </table>
+</div>

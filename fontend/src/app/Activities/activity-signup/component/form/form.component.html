@@ -1,0 +1,110 @@
+<div class="p-10">
+  <div class="flex justify-center">ACTIVITY SUMMARY</div>
+  <div class="flex justify-center mt-6 ">
+    <div class="flex items-center justify-center border-2 rounded-xl " style="height: 220px; width: 60%; border-color: #d5e6d1;">
+          <div (click)="openModal()" class="cursor-pointer">+ Add Summary</div>
+       
+  
+  <!-- Modal toggle -->
+  
+  
+  <!-- Main modal -->
+  <div *ngIf="isVisible1" tabindex="-1" aria-hidden="true" class="fixed inset-0 flex items-center justify-center">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <!-- Modal header -->
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              BUDGET SUMMARY
+            </h3>
+            <button type="button" (click)="closeModal()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-4 md:p-5 space-y-4">
+            <div>Item:</div>
+            <input type="text" [(ngModel)]="budgetSummary.item" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Budget Given:</div>
+            <input type="number" [(ngModel)]="budgetSummary.budgetGiven" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Budget Used:</div>
+            <input type="number" [(ngModel)]="budgetSummary.budgetUsed" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Remaining Budget:</div>
+            <input type="number" [(ngModel)]="budgetSummary.remainingBudget" class="w-full rounded-md" placeholder="Enter Details">
+          </div>
+          <!-- Modal footer -->
+          <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <button (click)="submitBudgetSummaryForm()" type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">
+              Submit
+            </button>
+            <button (click)="closeModal()" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+              Decline
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      </div>
+  </div>
+  <div class="flex justify-center my-6">BUDGET SUMMARY</div>
+  <div class="flex justify-center mt-3 ">
+    <div class="flex items-center justify-center border-2 rounded-xl " style="height: 220px; width: 60%; border-color: #d5e6d1;">
+          <div data-modal-target="default-modal1" data-modal-toggle="default-modal1" (click)="openModal1()" class="cursor-pointer">+ Add Summary</div>
+       
+  
+          <!-- Modal toggle -->
+          
+         <!-- Main modal -->
+  <div *ngIf="isVisible" tabindex="-1" aria-hidden="true" class="fixed inset-0 flex items-center justify-center">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <!-- Modal header -->
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              ACTIVITY SUMMARY
+            </h3>
+            <button type="button" (click)="closeModal()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white">
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+              </svg>
+              <span class="sr-only">Close modal</span>
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="p-4 md:p-5 space-y-4">
+            <div>Media and Props Department:</div>
+            <input type="text" [(ngModel)]="activitySummary.mediaAndPropsDepartment" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Location Department:</div>
+            <input type="text" [(ngModel)]="activitySummary.locationDepartment" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Cons:</div>
+            <input type="text" [(ngModel)]="activitySummary.cons" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Problems Faced:</div>
+            <input type="text" [(ngModel)]="activitySummary.problemsFaced" class="w-full rounded-md" placeholder="Enter Details">
+            <div>Solutions to Problems:</div>
+            <input type="text" [(ngModel)]="activitySummary.solutionsToProblems" class="w-full rounded-md" placeholder="Enter Details">
+            
+          </div>
+          <!-- Modal footer -->
+          <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+            <button (click)="submitActivitySummaryForm()" type="button" class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5">
+              Submit
+            </button>
+            <button (click)="closeModal()" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700">
+              Decline
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+            </div>
+      </div>
+  
+  
+  </div>

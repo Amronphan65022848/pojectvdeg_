@@ -1,0 +1,36 @@
+.sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 5px;
+    justify-content: center
+    /* ทำให้ภาพที่เกินขนาดบรรทัดจะย้ายไปบรรทัดใหม่ */
+    /* ระยะห่างระหว่างภาพ */
+    /* จัดกึ่งกลางภาพทั้งหมด */
+}
+
+.sponsors div {
+    flex: 0 1 150px;
+    /* กำหนดขนาดคงที่ของภาพแต่ละภาพ */
+}
+
+.sponsors img {
+    width: 100%;
+    object-fit: cover;
+    height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.backicon{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.heading-text{
+    padding-left: 10px;
+}
+
+

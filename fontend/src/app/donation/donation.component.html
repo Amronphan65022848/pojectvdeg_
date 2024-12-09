@@ -1,0 +1,48 @@
+<div class="Donate">
+    <h1>DONATION CENTER</h1>
+    <div class="data">
+        <div class="v1">
+            <div class="person">
+                <img  src="{{activity.activityImageUrl}}" alt="">
+                <h2>{{activity.activityName}}</h2>
+                <h4>Activity Details</h4>
+                <p>{{activity.activityDescription}}</p>
+            </div>
+        </div>
+        <div class="v2">
+            <input type="text" placeholder="Name of Donator" [(ngModel)]="donator.fullName">
+            <input type="text" placeholder="Contact Information" [(ngModel)]="donator.contact">
+            <input type="number" placeholder="Transaction Amount" [(ngModel)]="donator.amount">
+
+            <div class="buttom">
+                <button (click)="submitForm()">Attach Invoice</button>
+                <div class="b1">
+                    <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+                    <img class="iconimg" [src]="imageSrc || '../../../../../../assets/imgs/admin/activityCreation/iconimg.svg'" alt="icon" (click)="fileInput.click()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="SOFT">
+        <h1>RECENT DONATIONS</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Name of Donator</th>
+              <th>Date</th>
+              <th>Amount Donated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- วนลูปแสดงข้อมูลการบริจาค -->
+            <tr *ngFor="let donation of donations; let i = index">
+              <td>{{ i+1 }}</td>
+              <td>{{ donation.fullname }}</td>
+              <td>{{ donation.time | date:'dd/MM/yyyy' }}</td> <!-- Format วันที่ -->
+              <td>{{ donation.amount }} THB</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+</div>

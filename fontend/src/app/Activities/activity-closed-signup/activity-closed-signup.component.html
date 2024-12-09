@@ -1,0 +1,31 @@
+<div class="div">
+<div class="closed">
+    <div class="data-c">
+        <div class="img-event">
+            <img src="{{activity.activityImageUrl}}" alt="Description of image">
+        </div>
+        <div class="head">
+            <div class="left">
+                <h3>{{activity.activityName}}</h3>
+            </div>
+            <div class="right">
+                <h3>{{activity.totalvolunteerAmount}}/{{activity.volunteerAmount}}</h3>
+            </div>
+        </div>
+        <div class="dis">
+            <span>Activity Details</span>
+            <br>
+            <p>{{activity.activityDescription}}</p>
+        </div>
+        <div class="dis-d">
+            <div class="b-end">
+                <h1>THIS FORM HAS BEEN CLOSED BY ADMIN</h1>
+                <div class="btn-end">
+                    <button (click)="gotoactivity()">Activity Summary</button>
+                    <button (click)="gotovolunteer()">Volunteer List</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

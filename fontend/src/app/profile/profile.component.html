@@ -1,0 +1,201 @@
+<!-- <app-nevbar></app-nevbar> -->
+<div class="Profile">
+    <div class="data">
+        <div>
+            <h1>Profile</h1>
+        </div>
+        <div class="bubble">
+
+
+            <!-- <div class="PG1">
+                <a href="#">
+                    <img  [src]="profileImageUrl" alt="" width="80px" class="rounded-full w-28 h-28">
+                </a>
+            </div>
+            <div class="PG2">
+                <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+            </div>
+            <div class="PG3">
+                <a (click)="openModal()">
+                    <img class="cursor-pointer" src="../../assets/imgs/profile/pen.png" alt="">
+                </a>
+            </div> -->
+
+
+
+            <div *ngIf="isVisible" id="default-modal" tabindex="-1" aria-hidden="true"
+                class="fixed inset-0 flex items-center justify-center">
+                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                    <!-- Modal content -->
+                    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 pt-6">
+                        <!-- Modal header เพิ่มปุ่มมา -->
+                        <div class="flex justify-between items-center mb-6 text-3xl px-6">
+                            <div>PERSONAL INFORMATION</div>
+                            <button (click)="closeModal()" class="text-gray-500 hover:text-gray-800 text-xl">
+                                ✖
+                            </button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="flex justify-around items-center my-6">
+                            <img [src]="profileImageUrl" alt="" width="220px" (click)="triggerFileInput()"
+                                class="rounded-full w-28 h-28" />
+                            <!-- ซ่อน input file -->
+                            <input type="file" id="fileInput" (change)="onFileSelected($event)"
+                                style="display: none;" />
+
+                            <div>
+                                <div>First Name:</div>
+                                <input type="text" [(ngModel)]="firstName" placeholder="Enter First Name"
+                                    class="rounded-md w-full mb-3">
+                                <div>Last Name:</div>
+                                <input type="text" [(ngModel)]="lastName" placeholder="Enter Last Name"
+                                    class="rounded-md w-full mb-3">
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div
+                            class="flex items-center justify-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                            <div class="flex justify-center"> <button data-modal-hide="default-modal" type="button"
+                                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none px-10 p-3 "
+                                    (click)="updateName()">Confirm</button></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="content">
+                <div class="top-1">
+                    <div class="edit-admin">
+                        <div class="PG1">
+                            <a href="#">
+                                <img [src]="profileImageUrl" alt="" width="80px" class="rounded-full w-28 h-28">
+                            </a>
+                        </div>
+                        <div class="PG2">
+                            <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+                        </div>
+                        <div class="PG3">
+                            <a (click)="openModal()">
+                                <img class="cursor-pointer" src="../../assets/imgs/profile/pen.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    
+                  
+
+                    <div class="test">
+                        <h2>Personal Information</h2>
+                        <a (click)="openModal1()">
+                            <img class="cursor-pointer" src="../../assets/imgs/profile/pen.png" alt="">
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+                <!-- <div class="PG4"> -->
+
+
+
+
+                    <div *ngIf="isVisible1" id="default-modal1" tabindex="-1" aria-hidden="true"
+                        class="fixed inset-0 flex items-center justify-center">
+                        <div class="relative p-4 w-full max-w-2xl max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 pt-6 px-6">
+                                <!-- Modal header เพิ่มปุ่มเข้ามา-->
+                                <div class="flex justify-between items-center mb-6 text-3xl px-6">
+                                    <div>PERSONAL INFORMATION</div>
+                                    <button (click)="closeModal()" class="text-gray-500 hover:text-gray-800 text-xl">
+                                        ✖
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="flex justify-between gap-3">
+                                    <div class="w-full">
+                                        <div>E-mail:</div>
+                                        <input type="text" [(ngModel)]="email" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+
+                                        <div>Illness :</div>
+                                        <input type="text" [(ngModel)]="illness" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+
+                                        <div>Allergies :</div>
+                                        <input type="text" [(ngModel)]="allergies" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+
+                                        <div>Food Allergies :</div>
+                                        <input type="text" [(ngModel)]="foodallergies" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+                                    </div>
+                                    <div class="w-full">
+                                        <div>Phone Number :</div>
+                                        <input type="text" [(ngModel)]="phone" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+
+                                        <div>Emergency Contact :</div>
+                                        <input type="text" [(ngModel)]="contact" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+
+                                        <div>Religion :</div>
+                                        <input type="text" [(ngModel)]="religion" placeholder="Enter Details"
+                                            class="rounded-md w-full mb-3">
+
+                                    </div>
+                                </div>
+                                <!-- Modal footer -->
+                                <div
+                                    class="flex items-center justify-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                    <div class="flex justify-center"> <button data-modal-hide="default-modal1"
+                                            (click)="updateDetails()" type="button"
+                                            class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none px-10 p-3 ">Confirm</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+
+            <!-- <div class="border"></div> -->
+            <div class="PG4">
+
+                <div class="left"> <b>E-Mail :{{ user.email }}</b></div>
+
+                <div class="right"><b>Phone Number :{{ user.phone }}</b></div>
+
+            </div>
+            <!-- <div class="border"></div> -->
+
+            <div class="PG4">
+                <div class="left"> <b>Illness : Asthma </b></div>
+                <div class="right"><b>Emergency Contact : {{ user.contact }}</b></div>
+
+            </div>
+            <!-- <div class="border"></div> -->
+
+            <div class="PG4">
+                <div class="left"> <b>Allergies : {{ user.allergies}} </b></div>
+                <div class="right"><b>Religion : {{user.religion}}</b></div>
+
+            </div>
+            <!-- <div class="border"></div> -->
+
+            <div class="PG4">
+                <div class="left"> <b>Food Allergies : {{user.foodallergies}} </b></div>
+
+            </div>
+            <!-- <div class="border"></div> -->
+            <p>User Since : 08/07/2023</p>
+
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>

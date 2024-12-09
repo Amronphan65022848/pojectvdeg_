@@ -1,0 +1,150 @@
+/* Base Styling */
+nav {
+  background: linear-gradient(to right, #2FC000 0%, #238F00 100%);
+
+
+  padding: 10px 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Menu Styling */
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 120px;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.menu li a.active-link {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+}
+.profile-link {
+  display: none; /* ซ่อนลิงก์เป็นค่าเริ่มต้น */
+}
+/* Profile Icon */
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: rgba(213, 230, 209, 0.8);
+    /* โปร่งแสง 80% */
+
+    flex-direction: column;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding: 0;
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .profile-link {
+    display: block; /* แสดงเมื่อเป็นหน้าจอเล็ก */
+    text-align: center; /* จัดให้อยู่กลาง */
+    padding: 10px 20px;
+  }
+
+  .profile-link a {
+    color: black; /* สีสำหรับโหมดมือถือ */
+    text-decoration: none;
+  }
+  .menu li a {
+    color: black;
+    /* เปลี่ยนสีลิงก์ในโหมดมือถือ */
+    text-decoration: none;
+  }
+
+  .menu.open {
+    height: auto;
+    padding: 20px 0;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .menu li a.active-link {
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0);
+  }
+
+  .menu li {
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .profile {
+    display: none;
+  }
+}
+
+/* Hamburger Menu Animation */
+.menu.open+.hamburger span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu.open+.hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.open+.hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

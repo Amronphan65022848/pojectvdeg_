@@ -1,0 +1,75 @@
+<div class="activity-f">
+    <div class="data-s">
+        <div class="img-event">
+            <img src="{{activitydetail.activityImageUrl}}" alt="Description of image">
+        </div>
+
+        <div class="head">
+            <div class="left">
+                <h3>{{ activitydetail.activityName }}</h3>
+            </div>
+            <div class="right">
+                <h3>{{activitydetail.totalvolunteerAmount}}/{{activitydetail.volunteerAmount}}</h3>
+            </div>
+        </div>
+
+        <div class="dis">
+            <span>Activity Details</span>
+            <p>{{ activitydetail.activityDescription }}</p>
+        </div>
+
+        <div class="sumdata">
+            <div class="summer">
+                <span>Activity Summary</span>
+            </div>
+            <div class="griditem">
+                <div class="text1">
+                    <span>Media and Props Department:</span>
+                    <p>{{ activitysum.mediaAndPropsDepartment }}</p>
+                </div>
+                <div class="text2">
+                    <span>Cons:</span>
+                    <p>{{ activitysum.cons }}</p>
+                </div>
+            </div>
+            <div class="griditem">
+                <div class="text1">
+                    <span>Location Department:</span>
+                    <p>{{ activitysum.locationDepartment }}</p>
+                </div>
+                <div class="text2">
+                    <span>Problems Faced:</span>
+                    <p>{{ activitysum.problemsFaced }}</p>
+                </div>
+            </div>
+            <div class="item">
+                <span>Solution to Problems:</span>
+                <p>{{ activitysum.solutionsToProblems }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dtn">
+        <h2>Activity List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Item</th>
+                    <th>Given</th>
+                    <th>Used</th>
+                    <th>Remaining Budget</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let activity of activity; let i = index">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ activity.item }}</td>
+                    <td>{{ activity.budgetGiven }}</td>
+                    <td>{{ activity.budgetUsed }}</td>
+                    <td>{{ activity.remainingBudget }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

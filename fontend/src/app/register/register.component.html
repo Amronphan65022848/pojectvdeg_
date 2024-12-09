@@ -1,0 +1,30 @@
+<div class="Reset">
+  <div class="content">
+    <div class="head">
+      <h1>Register</h1>
+    </div>
+    <div class="form">
+      <div class="bottom">
+        <!-- Input container -->
+        <div class="form-grid">
+          <input type="email" placeholder="Email" [(ngModel)]="user.email">
+          <input type="password" placeholder="Password" [(ngModel)]="user.password">
+          <input type="text" placeholder="First Name" [(ngModel)]="user.firstName">
+          <input type="text" placeholder="Last Name" [(ngModel)]="user.lastName">
+          <input type="number" placeholder="Phone Number" [(ngModel)]="user.phone">
+          <input type="text" placeholder="Illness" [(ngModel)]="user.illness">
+          <input type="text" placeholder="Allergies" [(ngModel)]="user.allergies">
+          <input type="text" placeholder="Religion" [(ngModel)]="user.religion">
+          <input type="text" placeholder="Food Allergies" [(ngModel)]="user.foodallergies">
+          <input type="text" placeholder="Contact" [(ngModel)]="user.contact">
+        </div>
+      </div>
+
+      <button (click)="onSubmit()">Register</button>
+      <div class="text-p">
+        <p (click)="navigateToLogin()">Login Here</p>
+      </div>
+    </div>
+    
+  </div>
+</div>

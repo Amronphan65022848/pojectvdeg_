@@ -1,0 +1,88 @@
+<app-search-bar></app-search-bar>
+
+
+<div class="content">
+    <h1>New Activity</h1>
+    <div class="box-img">
+        <div class="icon-png">
+            <!-- ซ่อนปุ่ม input file สำหรับกิจกรรม -->
+            <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" style="display: none;">
+            <!-- เมื่อคลิกรูปภาพจะเรียกฟังก์ชัน triggerFileInputClick -->
+
+            <!-- เมื่อคลิกรูปภาพจะเรียกฟังก์ชัน triggerFileInputClick -->
+            <img *ngIf="objectURL; else defaultImage" [src]="objectURL" alt="Uploaded Image" class="uploaded-image"
+                (click)="triggerFileInputClick(fileInput)">
+
+            <!-- รูปภาพค่าเริ่มต้น ถ้าไม่มีการเลือกไฟล์ -->
+            <ng-template #defaultImage>
+                <img src="../../../../../../assets/imgs/admin/activityCreation/iconimg.svg" alt="Upload Image"
+                    (click)="triggerFileInputClick(fileInput)">
+            </ng-template>
+           
+        </div>
+        <div class="text">
+            <h2>Upload Image</h2>
+            <button (click)="clearactivityIMG()">Clear</button>
+        </div>
+    </div>
+
+    <!-- <div class="data"> -->
+        <div class="box-input">
+            <div class="left">
+              <input type="text" placeholder="Activity Name" [(ngModel)]="activityName">
+              <input type="text" placeholder="Place of Activity" [(ngModel)]="placeOfActivity">
+              <input type="text" placeholder="Activity Description" [(ngModel)]="activityDescription">
+              <input type="number" placeholder="Volunteer Amount" [(ngModel)]="volunteerAmount">
+            </div>
+          
+            <div class="right">
+              <p class="title-top">Select date</p>
+              <h2 class="title">Enter dates</h2>
+              <div class="between-input">
+                <input type="date" class="input-date" [(ngModel)]="startDate" placeholder="date-start">
+                <input type="date" class="input-date" [(ngModel)]="endDate" placeholder="date-end" [min]="startDate" [disabled]="!startDate">
+              </div>
+              <div class="footer-button">
+                <div (click)="clearForm()">
+                  <p class="bottom-text">Clear</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+    <!-- <div class="line"></div>
+    <h1>Sponsor List</h1>
+    <div class="box-img">
+        <div class="icon-png">
+            <label for="fileInput" class="file-input-label">
+                <img src="../../../../../../assets/imgs/admin/activityCreation/iconimg.svg" alt="Upload Image">
+            </label>
+
+            <input type="file" id="fileInput" #fileInput (change)="onFileSelectedsponsor($event)" accept="image/*"
+                multiple style="display: none;">
+
+        </div>
+        <div class="text">
+            <h2>Upload Image</h2>
+        </div>
+
+        <div>
+            <h3>Selected Images for Sponsor:</h3>
+            <div class="selected-images">
+                <div>
+                    <p>Number of images : {{ totalSponsors }}</p>
+                    <p *ngIf="newSponsorFiles.length > 0">FileName : {{ newSponsorFiles[0].name}}</p>
+                </div>
+                <button (click)="clearSponsor()">Clear</button>
+            </div>
+        </div>
+        
+    </div> -->
+
+    <!-- แสดงผลภาพที่ถูกเลือก -->
+
+
+
+
+    <button class="button-create" (click)="submitForm()">Create Activity</button>
+</div>

@@ -1,0 +1,19 @@
+<div class="slider-content">
+    <div class="text">
+      <div class="left">
+        <span>Past Activities</span>
+      </div>
+      <div class="right">
+        <a href="/activity">
+        <span>See More</span>
+        <img src="../../../../assets/imgs/carousal/slide/icon1.png" alt="" width="">
+      </a>
+      </div>
+
+    </div>
+  
+    <div class="slider-img" #slider>
+      <img *ngFor="let activity of activities" [src]="activity.activityImageUrl" alt="Activity Image" (click)="navigateToSignup(activity.activityId)">
+    </div>
+  </div>
+  

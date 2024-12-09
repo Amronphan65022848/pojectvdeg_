@@ -1,0 +1,31 @@
+footer {
+    font-size: 32px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /* จัดเรียงองค์ประกอบไปทางขวา */
+    background: linear-gradient(to top, #2FC000, #238F00);
+    /* สีไล่ระดับจากล่างไปบน */
+    /* position: fixed; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* ให้ footer กว้างเต็มหน้าจอ */
+}
+
+.bottom a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* ระยะห่างระหว่างข้อความและไอคอน */
+    color: white;
+    /* สีของข้อความในลิงก์เป็นสีขาว */
+    text-decoration: none;
+    /* เอาเส้นใต้ของลิงก์ออก */
+}
+
+.bottom a:hover {
+    text-decoration: underline;
+    /* เมื่อโฮเวอร์ลิงก์ให้มีเส้นใต้ */
+}

@@ -1,0 +1,59 @@
+<div class="content">
+
+  <button class="btn" (click)="gotoAdmin()">New Activity +</button>
+
+  <!-- <div class="search-container">
+    <i class="fas fa-bars menu-icon"></i>
+    <input type="text" class="search-input" placeholder="Search Activity Name">
+    <i class="fas fa-search search-icon"></i>
+  </div> -->
+</div>
+
+
+
+<div class="dtn">
+  <div *ngIf="loading" class="loading-overlay">
+    <mat-spinner></mat-spinner>
+  </div>
+  <h2 style="text-align:center; font-size: 22px;" >Activity List</h2>
+  <table>
+
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Activity Name</th>
+        <th>Date</th>
+        <!-- <th>Information</th> -->
+        <!-- <th>Files</th> -->
+        <th>Status</th>
+        <th>Report</th>
+        <th>Volunteer</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activity of activities; let i = index">
+        <td>{{ i+1}}</td>
+        <td>{{ activity.activityName }}</td>
+        <td>{{ activity.startDate }} - {{ activity.endDate }} </td>
+        
+        <!-- <td ><a (click)="goToInformation(activity.activityId)" style="cursor:pointer;"><i class="fas fa-link"></i></a>
+        </td> -->
+        <!-- <td *ngIf="!activity.informationLink"> -->
+          <!-- <button (click)="addGoogleDriveLink(activity)">add link to google drive</button> -->
+        <!-- </td> -->
+        <!-- <td *ngIf="activity.informationLink"><a href="{{ activity.informationLink }}" target="_blank"><i class="fas fa-link"></i></a></td> -->
+
+
+        <td>
+          <label class="switch">
+            <input type="checkbox" [(ngModel)]="activity.status" (change)="updateActivityStatus(activity)"
+              *ngIf="loading === false" />
+            <span class="slider round"></span>
+          </label>
+        </td>
+        <td><button class="btndefault" (click)="gotoReport(activity.activityId)">Report</button></td>
+        <td><button class="btndefault" (click)="gotoVolunteer(activity.activityId)">Volunteer</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

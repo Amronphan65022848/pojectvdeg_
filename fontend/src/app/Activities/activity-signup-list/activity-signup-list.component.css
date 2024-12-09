@@ -1,0 +1,148 @@
+/* General table styling */
+.dtn {
+    padding: 0px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+table {
+    width: 100%; /* Ensures the table takes full width of its container */
+    table-layout: fixed; /* Allows setting specific widths for columns */
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #d5e6d1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(1, 1, 1, 1.1);
+    overflow: hidden;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #81b577; /* Only right borders remain */
+}
+
+th {
+    background-color: #c0daba;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Handle overflow text with ellipsis (...) */
+}
+
+/* Column width adjustments */
+th:nth-child(1), td:nth-child(1) { /* No. column */
+    width: 5%; /* Smaller width for "No." */
+}
+
+th:nth-child(4), td:nth-child(4) { /* Information column */
+    width: 10%; /* Smaller width for "Information" */
+}
+
+th:nth-child(5), td:nth-child(5) { /* Files column */
+    width: 10%; /* Smaller width for "Files" */
+}
+
+th:nth-child(6), td:nth-child(6) { /* Status column */
+    width: 10%; /* Smaller width for "Status" */
+}
+
+/* Reduced width for Activity Name and Date */
+th:nth-child(2), td:nth-child(2) { /* Activity Name column */
+    width: 15%; /* Reduce width for "Activity Name" */
+}
+
+th:nth-child(3), td:nth-child(3) { /* Date column */
+    width: 12%; /* Reduce width for "Date" */
+}
+
+/* Remove horizontal borders */
+tr:first-child th {
+    border-top: none;
+}
+
+td, th {
+    border-top: none; /* Remove top border */
+    border-bottom: none; /* Remove bottom border */
+}
+
+/* Styling for the row number (first column) */
+td:first-child {
+    font-weight: bold;
+}
+
+/* Link styling */
+a {
+    text-decoration: none;
+    color: #6a5acd;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #483d8b;
+}
+
+/* Toggle switch styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Reduced width for smaller switch */
+    height: 24px; /* Reduced height for smaller switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #6a5acd;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px); /* Adjusted for smaller slider */
+}
+
+/* Rounded slider */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+tbody tr:hover {
+    background-color: #f1f1f1;
+  }

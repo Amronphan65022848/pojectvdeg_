@@ -1,0 +1,16 @@
+<div class="carousel">
+    <div class="carousel-content">
+        <img *ngFor="let activity of activities" class="g-item" [src]="activity.activityImageUrl" [alt]="activity.name || 'Activity Image'">
+    </div>
+    <div class="img-controls">
+        <button class="prev" aria-label="Previous Slide" (click)="prevSlide()">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <div class="dots">
+            <div *ngFor="let i of itemIndexes" class="dot" [ngClass]="{'active': i === currentIndex}"></div>
+        </div>
+        <button class="next" aria-label="Next Slide" (click)="nextSlide()">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>

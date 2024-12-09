@@ -1,0 +1,117 @@
+.activity-f {
+    padding: 20px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.data-s {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #eaf3e8;
+    border: 1px solid #c0daba;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.data-s img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.dis span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.dis p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.sumdata {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.griditem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.item span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.dtn {
+    margin-top: 20px;
+}
+
+.dtn h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #d5e6d1;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border-right: 1px solid #81b577;
+}
+
+th {
+    background-color: #c0daba;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 14px;
+    color: #555;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tbody tr:hover {
+    background-color: #eaf3e8;
+}

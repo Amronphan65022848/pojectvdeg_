@@ -1,0 +1,42 @@
+<div class="div">
+    <div class="activity-s">
+       
+    
+        
+        <div class="data-s">
+            <div class="img-event">
+                <img src="{{activity.activityImageUrl}}" alt="Description of image">
+            </div>
+            
+    
+    
+            <div class="head">
+                <div class="left">
+                    <h3>{{activity.activityName}}</h3>
+                </div>
+                
+                <div class="right">
+                    <h3>{{activity.totalvolunteerAmount}}/{{activity.volunteerAmount}}</h3>
+                </div>
+    
+            </div>
+    
+            <div class="dis">
+                <span>Activity Details</span>
+                <br>
+                <p>{{activity.activityDescription}}</p>
+            
+            </div>
+    
+            <div *ngIf="showbtn" class="btnvolunteer">
+                <button (click)="gotovolunteer()">Volunteer List</button>
+            </div>
+        </div>
+        
+    
+    </div>
+    
+    <div *ngIf="showForm">
+        <app-form></app-form>
+    </div>
+    </div> 

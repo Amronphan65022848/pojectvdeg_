@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="total">
+        <h2>Total Activities </h2>
+
+        <!-- ตรวจสอบสถานะ loading -->
+        <div *ngIf="loading">Loading...</div>
+
+        <!-- ถ้าไม่ loading และมีข้อมูลให้แสดงกิจกรรม -->
+        <div *ngIf="!loading && activities.length > 0">
+            <div *ngFor="let activity of activities" class="data">
+                <div class="box" (click)="navigateToSignup(activity.activityId)">
+                    <div class="left-im">
+                        <img [src]="activity.activityImageUrl" alt="{{ activity.activityName }}">
+                        <button (click)="navigateToDonation(activity.activityId)">Donation</button>
+                    </div>
+                    <div class="discipstion">
+                        <h3>{{ activity.activityName }}</h3>
+                        <p>{{ activity.activityDescriptions }}</p>
+                    </div>
+                </div>
+
+
+                <!-- <div class="line"></div> -->
+            </div>
+        </div>
+
+
+<!-- show in responsive -->
+        <div *ngIf="!loading && activities.length > 0">
+            <div *ngFor="let activity of activities" class="data1">
+                <div class="box1" (click)="navigateToSignup(activity.activityId)">
+                    <div class="left-im">
+                        <img [src]="activity.activityImageUrl" alt="{{ activity.activityName }}">
+                        
+                    </div>
+                    <div class="discipstion1">
+                        <h3>{{ activity.activityName }}</h3>
+
+                        <p>{{ activity.activityDescriptions }}</p>
+                    </div>
+
+                    <button (click)="navigateToDonation(activity.activityId)">Donation</button>
+                </div>
+
+
+                <!-- <div class="line"></div> -->
+            </div>
+        </div>
+        <!-- ถ้าไม่มีข้อมูลกิจกรรม -->
+        <div *ngIf="!loading && activities.length === 0">
+            <p>No activities available.</p>
+        </div>
+    </div>
+</div>
